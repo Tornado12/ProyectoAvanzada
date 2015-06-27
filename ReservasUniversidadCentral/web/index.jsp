@@ -1,38 +1,22 @@
 <%-- 
     Document   : index
-    Created on : 27/06/2015, 02:57:02 AM
-    Author     : Javier
+    Created on : 26-jun-2015, 22:43:13
+    Author     : ryu
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
-        <link href="css/estilo-general.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        <title>Sistema de reserva Universidad Central</title>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    </head>
+     </head>
+     <h2> <div align="center">RESERVAS UNIVERSIDAD CENTRAL</div></h2>
+     <h3 align ="center">Bienvenidos al sistema de reservas de zonas comunes de la Universidad Central.</h3>
+         
+    <h3 align ="center">Seleccione una de las opciones</h3>
     
-    <body>
-        
-        <h1>Universidad Central</h1>
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-            </div>
-           
-            
-            
-        </div>
-        
-  
-    </body>
+    <td>
+      <a href="${pageContext.request.contextPath}/CrearUsuario.jsp">Registro de Usuarios</a>
+      <a href="${pageContext.request.contextPath}/Login.jsp">Ingreso de Usuarios</a>
+     
+    </td>
+</body>
 </html>
