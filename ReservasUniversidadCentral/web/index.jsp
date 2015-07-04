@@ -9,9 +9,8 @@
 <html>
      </head>
      <h2> <div align="center">RESERVAS UNIVERSIDAD CENTRAL</div></h2>
-     <h3 align ="center">Bienvenidos al sistema de reservas de zonas comunes de la Universidad Central.</h3>
-         
-    <h3 align ="center">Seleccione una de las opciones</h3>
+     <h3 align ="center">Bienvenidos al sistema de reservas de zonas comunes de la Universidad Central.</h3>    
+     <h3 align ="center">Seleccione una de las opciones</h3>
     
     <td>
       <a href="${pageContext.request.contextPath}/CrearUsuario.jsp">Registro de Usuarios</a>

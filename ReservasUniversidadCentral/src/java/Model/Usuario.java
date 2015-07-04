@@ -5,32 +5,54 @@
  */
 package Model;
 
+import java.sql.ResultSet;
+
 /**
  *
- * @author Javier
+  * @author ryu
  */
-
-
-
-
 public class Usuario {
-    
-   
-    private int id;
+    private String id ;
+    private String codigo;
     private String nombre;
-    private String carrera;
-    private String username;
+    private String genero;
+    private String ocupacion;
+    private String usuario;
     private String password;
-    
-    public Usuario(){
+
+    public Usuario(String id, String codigo, String nombre, String genero, String ocupacion, String usuario, String password) {
+        this.id = id;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.ocupacion = ocupacion;
+        this.usuario = usuario;
+        this.password = password;
+    }
+     public Usuario(String codigo, String nombre, String genero, String ocupacion, String usuario, String password) {
+        this.id = id;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.ocupacion = ocupacion;
+        this.usuario = usuario;
+        this.password = password;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -41,20 +63,28 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getCarrera() {
-        return carrera;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setCarrera(String carrera) {
-        this.carrera = carrera;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String getUsername() {
-        return username;
+    public String getOcupacion() {
+        return ocupacion;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setOcupacion(String ocupacion) {
+        this.ocupacion = ocupacion;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPassword() {
@@ -64,12 +94,21 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    public void hacerReserva(){
-        
-        
-    }
+     
+    public Usuario (ResultSet rs) {
+        try {
+            id = rs.getString("id");
+            codigo = rs.getString("codigo");
+            nombre = rs.getString("nombre");
+            genero = rs.getString("genero");
+            ocupacion = rs.getString("ocupacion");
+            usuario = rs.getString("usuario");
+            password = rs.getString("password");
 
+        } catch (Exception e) {
+        }
+    }
+    
+    
     
 }
