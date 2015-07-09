@@ -5,12 +5,10 @@
  */
 package Controlador;
 
-import BD.UsuarioBD;
-import Model.Usuario;
-import Model.Usuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,29 +18,38 @@ import javax.servlet.http.HttpSession;
  *
  * @author ryu
  */
-public class ServletUsuario extends HttpServlet {
 
-       protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+@WebServlet(name = "Navegacion", urlPatterns = {"/Navegacion"})
+public class Navegacion extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Usuarios usuarios = (Usuarios)session.getAttribute("usuarios");
-        if(usuarios==null){
-            usuarios = new Usuarios();
-            usuarios.setListaUsuarios(UsuarioBD.mgr.getUsuarios());
-            session.setAttribute("usuarios", usuarios);
-        }   
-            
-    Usuario est = new Usuario();
-        est.setCodigo(request.getParameter("codigo"));
-        est.setNombre(request.getParameter("nombre"));
-        est.setGenero(request.getParameter("genero"));
-        est.setOcupacion(request.getParameter("ocupacion"));
-        est.setUsuario(request.getParameter("usuario"));
-        est.setPassword(request.getParameter("password"));
-        UsuarioBD.mgr.save(est,Boolean.TRUE);
-        session.setAttribute("usuario", est);
-        request.getRequestDispatcher("Mensaje.jsp").forward(request, response);        
-        // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+        String FormularioActivo;
+        if(request.getParameter("opcion1").equals(" Crear Usuario  "  )){
+            FormularioActivo="CrearUsuario.jsp";
+        }else{
+            if(request.getParameter("opcion2").equals(" Modificar Estudiante  "  )){
+            FormularioActivo="ModificarEstudiante.jsp";
+            }else{
+                FormularioActivo="FormularioInicial.jsp";
+            }
+        }
+        
+        session.setAttribute("FormularioActivo", FormularioActivo);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+    
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -81,5 +88,5 @@ public class ServletUsuario extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    }
 }
+

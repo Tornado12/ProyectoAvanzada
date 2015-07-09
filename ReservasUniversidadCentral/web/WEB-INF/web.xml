@@ -12,6 +12,10 @@
         <servlet-name>GuardarUsuario</servlet-name>
         <servlet-class>Controlador.GuardarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Navegacion</servlet-name>
+        <servlet-class>Controlador.Navegacion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletEstudiante</servlet-name>
         <url-pattern>/ServletEstudiante</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>GuardarUsuario</servlet-name>
         <url-pattern>/GuardarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Navegacion</servlet-name>
+        <url-pattern>/Navegacion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -39,7 +39,7 @@ public class GuardarUsuario extends HttpServlet {
         usu.setOcupacion(request.getParameter("ocupacion"));
         usu.setUsuario(request.getParameter("usuario"));
         session.setAttribute("usuario", usu);
-      //  UsuarioBD.mgr.save(usu,Boolean.FALSE);
+        UsuarioBD.mgr.save(usu,Boolean.FALSE);
         request.getRequestDispatcher("CrearUsuario.jsp").forward(request, response);
         
     }

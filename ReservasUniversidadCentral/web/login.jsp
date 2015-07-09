@@ -8,14 +8,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+    <style type="text/css">
+<!--
+body {
+	background-color: #FFFF99;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+     </head>
     <body>
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr align="center" bgcolor="#FF0000">
-    <td colspan="2"><h2><span class="Estilo1">Inicio de Sesion</span></h2></td>
-  </tr>
+      <tr align="center" bgcolor="#66CC00">
+        <td colspan="2"><h1><span class="Estilo1">RESERVAS UNIVERSIDAD CENTRAL</span></h1></td>
+      </tr>
+      <tr>
+    <td colspan="2"><h4>INICIO DE SESION</h4></td>
+    </tr>
   <tr>
     <td width="625">
     <form name="frmPrincipal" method="post" action="SVerificarUsuario">
@@ -38,7 +48,7 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2" bgcolor="#FF0000"><div align="center"><strong><span class="Estilo2">2015</span></strong></div></td>
+    <td colspan="2" bgcolor="#66CC00"><div align="center"><strong><span class="Estilo2">2015</span></strong></div></td>
   </tr>
 </table>
 </body>

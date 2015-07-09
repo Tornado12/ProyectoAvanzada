@@ -8,17 +8,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="estilos.css">
-        <script type="text/javascript" src="validaciones.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+    <style type="text/css">
+<!--
+body {
+	background-color: #FFFF99;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+     </head>
+     <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr align="center" bgcolor="#66CC00">
+        <td colspan="2"><h1><span class="Estilo1">RESERVAS UNIVERSIDAD CENTRAL</span></h1></td>
+        </tr>
+        <td colspan="2"><div align="center"><h3><span class="Estilo2">Formulario de Inscripcion</span></h3></div></td>
+        </tr>
     <body>
-        <h1>Formulario de Inscripcion</h1>
         <br><br>
-        <form name="formulario1" class="formularioTipo1" action="ServletUsuarioCtr" onsubmit="return validarForma(this)">
+        <form name="formulario1" class="formularioTipo1" action="ServletUsuario" onsubmit="return validarForma(this)">
         <table>
-            <caption><h2>INSCRIPCION</h2></caption>
             <tr>
                <td>Numero Cedula</td>
                <td><input name="codigo" type="text"></td>
@@ -31,7 +40,6 @@
                 <td>Genero</td>
                 <td>Hombre<input type="radio" name="genero" value="M"> Mujer<input type="radio" name="genero" value="F">
                 </td>
-                
             </tr>
             <tr>
                 <td>Ocupacio</td>
@@ -42,8 +50,7 @@
                         <option value="2">Egresado</option>
                         <option value="3">Docente</option>
                         <option value="4">Empleado</option>
-                        <option value="5">Administrativo</option>
-                       
+                        <option value="5">Administrativo</option>         
                     </select>
                 </td>
             </tr>
@@ -72,10 +79,11 @@
                 </td>
             </tr>
         </table>   
-    </form> 
-        <td>
-      <a href="${pageContext.request.contextPath}/index.jsp">Volver al inicio</a>
-      <a href="${pageContext.request.contextPath}/Login.jsp">Ingreso de Usuario</a>
-    </td>
+    </form>     
+        <h4><div aling="center"><a href="index.jsp">Volver al inicio</a></h4></div></td>
+  </tr>  
+   <tr>
+    <td colspan="2" bgcolor="#66CC00"><div align="center"><strong><span class="Estilo2">2015</span></strong></div></td>
+  </tr>
     </body>
 </html>
