@@ -10,6 +10,7 @@ import Model.Usuario;
 import Model.Usuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +42,7 @@ public class ServletUsuario extends HttpServlet {
             session.setAttribute("usuarios", usuarios);
         }   
             
-    Usuario est = new Usuario();
+        Usuario  est = new Usuario();
         est.setCodigo(request.getParameter("codigo"));
         est.setNombre(request.getParameter("nombre"));
         est.setGenero(request.getParameter("genero"));

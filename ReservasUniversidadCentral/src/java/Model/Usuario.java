@@ -12,6 +12,7 @@ import java.sql.ResultSet;
   * @author ryu
  */
 public class Usuario {
+    
     private String id ;
     private String codigo;
     private String nombre;
@@ -20,7 +21,8 @@ public class Usuario {
     private String usuario;
     private String password;
 
-    public Usuario(String id, String codigo, String nombre, String genero, String ocupacion, String usuario, String password) {
+    public Usuario() {
+           
         this.id = id;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -29,16 +31,7 @@ public class Usuario {
         this.usuario = usuario;
         this.password = password;
     }
-     public Usuario(String codigo, String nombre, String genero, String ocupacion, String usuario, String password) {
-        this.id = id;
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.genero = genero;
-        this.ocupacion = ocupacion;
-        this.usuario = usuario;
-        this.password = password;
-    }
-
+    
     public String getId() {
         return id;
     }
