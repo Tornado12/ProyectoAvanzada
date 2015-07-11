@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import BD.UsuarioBD;
 import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,14 +33,14 @@ public class GuardarUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Usuario usu = (Usuario)session.getAttribute("usuario");
-        usu.setCodigo(request.getParameter("codigo"));
-        usu.setNombre(request.getParameter("nombre"));
-        usu.setGenero(request.getParameter("genero"));
-        usu.setOcupacion(request.getParameter("ocupacion"));
-        usu.setUsuario(request.getParameter("usuario"));
-        session.setAttribute("usuario", usu);
-        UsuarioBD.mgr.save(usu,Boolean.FALSE);
+        Usuario est = (Usuario)session.getAttribute("usuario");
+        est.setCodigo(request.getParameter("codigo"));
+        est.setNombre(request.getParameter("nombre"));
+        est.setGenero(request.getParameter("genero"));
+        est.setOcupacion(request.getParameter("ocupacion"));
+        est.setUsuario(request.getParameter("user"));
+        session.setAttribute("usuario", est);
+        UsuarioBD.mgr.save(est,Boolean.FALSE);
         request.getRequestDispatcher("CrearUsuario.jsp").forward(request, response);
         
     }

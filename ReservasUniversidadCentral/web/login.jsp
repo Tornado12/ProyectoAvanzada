@@ -32,7 +32,7 @@ body,td,th {
     <table width="620" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="131">Usuario</td>
-        <td width="489"><input type="text" name="txtUsuario" id="txtUsuario" /></td>
+        <td width="489"><input type="text" name="txtUser" id="txtUser" /></td>
       </tr>
       <tr>
         <td>Clave</td>
@@ -44,9 +44,8 @@ body,td,th {
       </tr>
     </table>
     </form>
-    
-    </td>
-  </tr>
+        <h4><div aling="center"><a href="index.jsp">Volver al inicio</a></h4></div></td>
+ </tr>  
   <tr>
     <td colspan="2" bgcolor="#66CC00"><div align="center"><strong><span class="Estilo2">2015</span></strong></div></td>
   </tr>

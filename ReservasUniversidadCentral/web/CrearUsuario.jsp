@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+          <script type="text/javascript" src="validaciones.js"></script>
     <style type="text/css">
 <!--
 body {
@@ -59,7 +60,7 @@ body,td,th {
                     Usuario:(*)
                 </td>
                 <td>
-                    <input class="default" type="text" name="usuario" value="Escribir Usuario" onfocus="this.select();"/> 
+                    <input class="default" type="text" name="user" value="Escribir Usuario" onfocus="this.select();"/> 
                 </td>
             </tr>
             <tr>

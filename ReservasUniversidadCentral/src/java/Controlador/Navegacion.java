@@ -38,7 +38,7 @@ public class Navegacion extends HttpServlet {
         if(request.getParameter("opcion1").equals(" Crear Usuario  "  )){
             FormularioActivo="CrearUsuario.jsp";
         }else{
-            if(request.getParameter("opcion2").equals(" Modificar Estudiante  "  )){
+            if(request.getParameter("opcion2").equals(" Modificar Usuario  "  )){
             FormularioActivo="ModificarEstudiante.jsp";
             }else{
                 FormularioActivo="FormularioInicial.jsp";
