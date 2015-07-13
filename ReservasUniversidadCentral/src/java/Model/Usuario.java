@@ -18,7 +18,7 @@ public class Usuario {
     private String nombre;
     private String genero;
     private String ocupacion;
-    private String usuario;
+    private String user;
     private String password;
 
     public Usuario() {
@@ -28,7 +28,7 @@ public class Usuario {
         this.nombre = nombre;
         this.genero = genero;
         this.ocupacion = ocupacion;
-        this.usuario = usuario;
+        this.user = user;
         this.password = password;
     }
     
@@ -72,12 +72,12 @@ public class Usuario {
         this.ocupacion = ocupacion;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUser() {
+        return user;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getPassword() {
@@ -95,11 +95,19 @@ public class Usuario {
             nombre = rs.getString("nombre");
             genero = rs.getString("genero");
             ocupacion = rs.getString("ocupacion");
-            usuario = rs.getString("usuario");
+            user = rs.getString("user");
             password = rs.getString("password");
 
         } catch (Exception e) {
         }
+    }
+
+    public int getUsuario_privilegio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Usuario verificarUsuario(String user, String clave) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

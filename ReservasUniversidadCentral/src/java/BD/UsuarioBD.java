@@ -22,12 +22,12 @@ public class UsuarioBD extends DBManager{
     
     public void save(Usuario usuario,Boolean valor){
         if(valor){
-            mgr.execute("insert into usuario(codigo,nombre,genero,ocupacion,usuario,password) values('"+
+            mgr.execute("insert into usuario(codigo,nombre,genero,ocupacion,user,password) values('"+
                     usuario.getCodigo()+"','"+
                     usuario.getNombre()+"','"+
                     usuario.getGenero()+"','"+
                     usuario.getOcupacion()+"','"+
-                    usuario.getUsuario()+"','"+
+                    usuario.getUser()+"','"+
                     usuario.getPassword()+"')");
         }
     }

@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Controlador;
 
-import BD.UsuarioBD;
 import Model.Usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,38 +20,40 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ryu
+ * @author hwongu
  */
-public class GuardarUsuario extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
+public class VerificarUsuario extends HttpServlet {
+   
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Usuario est = (Usuario)session.getAttribute("usuario");
-        est.setCodigo(request.getParameter("codigo"));
-        est.setNombre(request.getParameter("nombre"));
-        est.setGenero(request.getParameter("genero"));
-        est.setOcupacion(request.getParameter("ocupacion"));
-        est.setUser(request.getParameter("user"));
-        session.setAttribute("usuario", est);
-        UsuarioBD.mgr.save(est,Boolean.FALSE);
-        request.getRequestDispatcher("CrearUsuario.jsp").forward(request, response);
-        
-    }
+    throws ServletException, IOException {
+       String user=request.getParameter("txtUsuario");
+        String clave=request.getParameter("txtClave");
+        Usuario u=new Usuario();
+        u=u.verificarUsuario(user, clave);
+        if(u!=null){
+            //El usuario existe en la base de datos y clave correcta
+            //Creamos la sesion
+            HttpSession sesion=request.getSession(true);
+            sesion.setAttribute("usuario", u);
+            if(u.getUsuario_privilegio()==0){
+             response.sendRedirect("CrearReserva.jsp");
+            }
+        }else{
+            //El usuario no existe o clave incorrecta
+            response.sendRedirect("Error.jsp");
+        }
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
+    /** 
      * Handles the HTTP <code>GET</code> method.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -56,13 +61,12 @@ public class GuardarUsuario extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         processRequest(request, response);
-    }
+    } 
 
-    /**
+    /** 
      * Handles the HTTP <code>POST</code> method.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -70,13 +74,12 @@ public class GuardarUsuario extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
+    /** 
      * Returns a short description of the servlet.
-     *
      * @return a String containing servlet description
      */
     @Override

@@ -6,9 +6,7 @@
 /* ARCHIVO VALIDACIONES.JS*/
 
 function validarForma(forma){
-    
-        // validamos el codigo 
-        
+               
         var codigo = forma.codigo;
         if(codigo.value == ""){
             alert("Debe proporcionar un numero de Cedula");
@@ -17,7 +15,7 @@ function validarForma(forma){
             return false;
         }
     
-        // validamos el nombre del estudiante
+        
         var nombre = forma.nombre;
         if(nombre.value == ""){
             alert("Debe proporcionar un nombre de Usuario");
@@ -42,18 +40,18 @@ function validarForma(forma){
 	}
         
         //Validamos la carrera
-	var ocupacion = forma.carrera;
+	var ocupacion = forma.ocupacion;
 	if(ocupacion.value == ""){
 		alert("Debe seleccionar una ocupacion");
 		return false;
 	}
 	
 	//Validamos el usuario
-	var usuario = forma.usuario;
-	if( usuario.value == "" || usuario.value == "Escribir usuario"){
+	var user = forma.user;
+	if( user.value == "" || user.value == "Escribir usuario"){
 		alert("Debe proporcionar un nombre de usuario");
-		usuario.focus();
-		usuario.select();
+		user.focus();
+		user.select();
 		return false;
 	}
 	

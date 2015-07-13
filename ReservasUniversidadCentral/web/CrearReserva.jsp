@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CrearUsuario
-    Created on : 26-jun-2015, 21:58:24
+    Document   : CrearReserva
+    Created on : 12-jul-2015, 20:44:57
     Author     : ryu
 --%>
 
@@ -27,50 +27,44 @@ body,td,th {
         </tr>
     <body>
         <br><br>
-        <form name="formulario1" class="formularioTipo1" action="ServletUsuario" onsubmit="return validarForma(this)">
+        <form name="formulario2" class="formularioTipo1" action="ServletReserva" onsubmit="return validarForma(this)">
         <table>
             <tr>
-               <td>Numero Cedula</td>
-               <td><input name="codigo" type="text"></td>
-            </tr>
-            <tr>
-                <td>Nombre</td>
-                <td><input name="nombre" type="text"></td>
-            </tr>
-            <tr>
-                <td>Genero</td>
-                <td>Hombre<input type="radio" name="genero" value="M"> Mujer<input type="radio" name="genero" value="F">
-                </td>
-            </tr>
-            <tr>
-                <td>Ocupacion</td>
+                <td>Tipo Reserva</td>
                 <td>
-                    <select name="Ocupacion" class="default">
+                    <select name="Treserva" class="default">
                         <option value="">Seleccionar</option>
-                        <option value="1">Estudiante</option>
-                        <option value="2">Egresado</option>
-                        <option value="3">Docente</option>
-                        <option value="4">Empleado</option>
-                        <option value="5">Administrativo</option>         
+                        <option value="1">Academica</option>
+                        <option value="2">Administrativa</option>
+                        <option value="3">Capacitacion</option>
+                        <option value="4">Otros</option>
+                    </select>
+                </td>        
+            <tr>
+                <td>Fecha</td>
+                <td><input name="fecha" type="text"></td>
+            </tr>
+            <tr>
+                <td>Hora Inicio</td>
+                <td><input name="Hinicio" type="text"></td>
+            </tr>
+            <tr>
+                <td>Hora Final</td>
+                <td><input name="Hfinal" type="text"></td>
+            </tr>
+            <tr>
+                <td>Tipo Espacio</td>
+                <td>
+                    <select name="Espacio" class="default">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Salon</option>
+                        <option value="2">Auditorio</option>
+                        <option value="3">Laboratorio</option>
+                        <option value="4">Teatro</option>
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td class="oce-first">
-                    Usuario:(*)
-                </td>
-                <td>
-                    <input class="default" type="text" name="user" value="Escribir Usuario" onfocus="this.select();"/> 
-                </td>
-            </tr>
-            <tr>
-                <td class="oce-first">
-                    Password:(*)
-                </td>
-                <td>
-                    <input class="default" type="password" name="password" onfocus="this.select();"/>
-                </td>  
-            </tr>
+            
             <tr style ="text-align: center;">
                 <td>
                     <input  type="reset" value="Limpiar" class="default"/>

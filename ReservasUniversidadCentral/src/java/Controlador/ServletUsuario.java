@@ -42,12 +42,12 @@ public class ServletUsuario extends HttpServlet {
             session.setAttribute("usuarios", usuarios);
         }   
             
-        Usuario  est = new Usuario();
+        Usuario est = new Usuario();
         est.setCodigo(request.getParameter("codigo"));
         est.setNombre(request.getParameter("nombre"));
         est.setGenero(request.getParameter("genero"));
         est.setOcupacion(request.getParameter("ocupacion"));
-        est.setUsuario(request.getParameter("user"));
+        est.setUser(request.getParameter("user"));
         est.setPassword(request.getParameter("password"));
         UsuarioBD.mgr.save(est,Boolean.TRUE);
         session.setAttribute("usuario", est);
