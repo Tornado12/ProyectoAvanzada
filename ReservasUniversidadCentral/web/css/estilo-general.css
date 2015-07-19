@@ -1,0 +1,6 @@
+
+html body{background-color:#fff;font-family: "PT Serif",serif;font-size: 1.2em;background-image: url("../img/fondo_template_default.jpg");background-repeat: repeat;background-attachment: fixed;}
+footer{background-color: #626E03;color:#fff;}
+h1{color: #ACAA00}
+.logo{margin: 0 auto;padding-top: 5%;position: relative;}
+.bloque_principal{width: 100%;height: auto;min-height: 300px;}

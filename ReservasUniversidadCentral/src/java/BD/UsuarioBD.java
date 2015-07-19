@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package BD;
 import Model.Usuario;
 import Servicios.DBManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-/**
- *
- * @author ryu
- */
+
+
 public class UsuarioBD extends DBManager{
     public static UsuarioBD mgr= new UsuarioBD();
 

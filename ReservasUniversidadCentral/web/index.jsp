@@ -1,41 +1,85 @@
-<%-- 
-    Document   : index
-    Created on : 26-jun-2015, 22:43:13
-    Author     : ryu
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <style type="text/css">
-<!--
-body {
-	background-color: #FFFF99;
-}
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-}
-</style>
-     </head>
-     <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr align="center" bgcolor="#66CC00">
-    <td colspan="2"><h1><span class="Estilo1">RESERVAS UNIVERSIDAD CENTRAL</span></h1></td>
-  </tr>
-<td colspan="2"><h3><span class="Estilo2">Bienvenidos al sistema de reservas de zonas comunes de la Universidad Central</span></h3></td>
-  </tr>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="css/estilo-general.css">
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   
-  <td colspan="2"><div align="center"><h3><span class="Estilo2">Seleccione una de las opciones</span></h3></div></td>
-  </tr>  
-        <tr align="center">
-        <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr align="center">
-            <td colspan="2">      
-      <h4><a href="CrearUsuario.jsp">Registro de Usuarios</a> | <a href="login.jsp">Ingreso de Usuarios</a> </h4></td>
-  </tr>  
-   <tr>
-    <td colspan="2" bgcolor="#66CC00"><div align="center"><strong><span class="Estilo2">2015</span></strong></div></td>
-  </tr>
+      <script src="js/jquery.min.js" type="text/javascript"></script>
+      <script src="js/bootstrap.min.js" type="text/javascript"></script>
+      
+     </head>
+     
+     <body>
+       
+         <div class="container">
+           
+             <header>
+                <div class="panel panel-default">
+                <div class="panel-body">
+                 <div class="row">
+                 <div class="col-lg-6 logo">
+                     <img src="img/logo_ucentral.png" class="img-responsive center-block"/>             
+                 </div>
+              
+                 <div class="col-lg-6">
+                     <h1 class="text-center">RESERVAS UNIVERSIDAD CENTRAL</h1>
+       
+                    <p class="text-center lead">Bienvenidos al sistema de reservas de zonas comunes de la Universidad Central</p>
+                 
+                 </div>
+                 </div>
+                </div></div>
+             </header>  
+            
+             
+             
+             
+             <div class="bloque_principal">    
+                 
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                      <h2>Seleccione una de las opciones:</h2>         
+                     
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th><h3 class="center-block"><a href="CrearUsuario.jsp">Registro de Usuarios</a></h3></th>
+                            <th><h3 class="center-block"><a href="login.jsp">Ingreso de Usuarios</a></h3></th>
+                          </tr>
+                        </thead>
+                           <tbody>
+                            <tr>
+                                <td><a href="CrearUsuario.jsp"><img src="img/registro.png" alt="registro" class="center-block"/></a></td>
+                                <td><a href="login.jsp"><img src="img/login.png" alt="login" class="center-block"/></a></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                       
+                    </div>
+                 </div>
+              
+             </div>
+     
+         </div>
+         
+         
+          <footer class="row-fluid text-right">
+              <span class="col-lg-12 lead"><strong>Sistema desarrollodo por: </strong></span>
+                 <p class="col-lg-12 small"> Nestor Castro - Javier Becerra </p>
+                 <ul class="list-inline col-lg-12">
+                     <li>Programación Avanzada</li>
+                     <li>Universidad Central 2015</li>
+                 </ul>
+                <br>
+                <div class="clearfix"></div>
+          </footer>
+ 
    </body>
 </html>
