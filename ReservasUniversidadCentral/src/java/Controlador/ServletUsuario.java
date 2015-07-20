@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
-import BD.UsuarioBD;
+//import BD.UsuarioBD;
 import Model.Usuario;
 import Model.Usuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author ryu
- */
 public class ServletUsuario extends HttpServlet {
 
     /**
@@ -35,36 +28,37 @@ public class ServletUsuario extends HttpServlet {
        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Usuarios usuarios = (Usuarios)session.getAttribute("usuarios");
+       
+        
+        RequestDispatcher rd = request.getRequestDispatcher("Mensaje.jsp");
+        rd.forward(request, response);
+       
+       /**
+        Usuario usuarios = (Usuario)session.getAttribute("usuarios");
+       
         if(usuarios==null){
-            usuarios = new Usuarios();
-            usuarios.setListaUsuarios(UsuarioBD.mgr.getUsuarios());
+            usuarios = new Usuario();
+            usuarios.setListaUsuarios(Usuario.mgr.);
             session.setAttribute("usuarios", usuarios);
-        }   
-            
+        } 
+        **/
+        
+       /**
         Usuario est = new Usuario();
-        est.setCodigo(request.getParameter("codigo"));
+        est.setCedula(request.getParameter("codigo"));
         est.setNombre(request.getParameter("nombre"));
+        est.setApellido(request.getParameter("apellido"));
         est.setGenero(request.getParameter("genero"));
-        est.setOcupacion(request.getParameter("ocupacion"));
-        est.setUser(request.getParameter("user"));
+        est.setCargo(request.getParameter("cargo"));
+        est.setUsername(request.getParameter("username"));
         est.setPassword(request.getParameter("password"));
-        UsuarioBD.mgr.save(est,Boolean.TRUE);
-        session.setAttribute("usuario", est);
+        est.setCargo(request.getParameter("cargo"));
+        
+        
+        Usuario.mgr.GuardarUsuario(est,Boolean.TRUE);
+       // session.setAttribute("usuario", est);
         request.getRequestDispatcher("Mensaje.jsp").forward(request, response);        
-           //    response.setContentType("text/html;charset=UTF-8");
-        /*try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. 
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletUsuario</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletEstudiantesCtr at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }*/
+       **/ 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

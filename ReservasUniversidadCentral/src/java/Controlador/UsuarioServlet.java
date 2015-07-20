@@ -1,25 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
-import BD.UsuarioBD;
 import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author ryu
- */
-public class GuardarUsuario extends HttpServlet {
+
+@WebServlet(name = "UsuarioServlet", urlPatterns = {"/UsuarioServlet"})
+public class UsuarioServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,17 +26,53 @@ public class GuardarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        Usuario est = (Usuario)session.getAttribute("usuario");
-        est.setCodigo(request.getParameter("codigo"));
-        est.setNombre(request.getParameter("nombre"));
-        est.setGenero(request.getParameter("genero"));
-        est.setOcupacion(request.getParameter("ocupacion"));
-        est.setUser(request.getParameter("user"));
-        session.setAttribute("usuario", est);
-        UsuarioBD.mgr.save(est,Boolean.FALSE);
-        request.getRequestDispatcher("CrearUsuario.jsp").forward(request, response);
-        
+        Usuario est = new Usuario();
+        Usuario a =new Usuario();
+        boolean test;
+                    
+        try (PrintWriter out = response.getWriter()) {
+            
+            /* TODO output your page here. You may use following sample code. */
+            
+            
+             est.setCedula(request.getParameter("codigo"));
+             est.setNombre(request.getParameter("nombre"));
+             est.setApellido(request.getParameter("apellido"));
+             est.setGenero(request.getParameter("genero"));
+             est.setCargo(request.getParameter("cargo"));
+             est.setUsername(request.getParameter("username"));
+             est.setPassword(request.getParameter("password"));
+             est.setRol(request.getParameter("rol"));
+            
+            
+             
+               test = est.GuardarUsuario(est);
+                
+               System.out.println("asasssss "+request.getParameter("codigo"));
+               
+                if (test==true) {
+                    response.sendRedirect("Mensaje.jsp");
+                    //request.getRequestDispatcher("Mensaje.jsp").forward(request, response); 
+                } else {
+                    out.println("Error al registrar usuario");
+                    out.println("VALOR REGRESO "+test);
+                }
+                
+               
+               
+                //est.GuardarUsuario(est);
+                //Usuario.mgr.save(est,Boolean.TRUE);
+                // Usuario.mgr.GuardarUsuario(est, Boolean.TRUE);
+                // session.setAttribute("usuario", est);
+                // session.setAttribute("regreso", aa);
+                //request.getSession().setAttribute("regreso", aa);
+               
+            
+            
+           
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -72,6 +102,7 @@ public class GuardarUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+       
     }
 
     /**

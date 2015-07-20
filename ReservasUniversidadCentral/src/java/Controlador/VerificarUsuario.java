@@ -33,22 +33,25 @@ public class VerificarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        
+     /**   
        String user=request.getParameter("txtUsuario");
         String clave=request.getParameter("txtClave");
         Usuario u=new Usuario();
-        u=u.verificarUsuario(user, clave);
+       // u=u.verificarUsuario(user, clave);
         if(u!=null){
             //El usuario existe en la base de datos y clave correcta
             //Creamos la sesion
             HttpSession sesion=request.getSession(true);
             sesion.setAttribute("usuario", u);
-            if(u.getUsuario_privilegio()==0){
-             response.sendRedirect("CrearReserva.jsp");
-            }
+        //    if(u.getUsuario_privilegio()==0){
+        //     response.sendRedirect("CrearReserva.jsp");
+        //   }
         }else{
             //El usuario no existe o clave incorrecta
             response.sendRedirect("Error.jsp");
         }
+      **/  
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

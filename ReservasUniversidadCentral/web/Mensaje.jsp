@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 26-jun-2015, 22:43:13
-    Author     : ryu
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +14,14 @@ body,td,th {
 </style>
      </head>
    <body>
+       
+       <% 
+           String resul = (String)session.getAttribute("usuario");
+       %>
+       
+   
+       resultado es <%=resul+" "%>
+       
      <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr align="center" bgcolor="#66CC00">
         <td colspan="2"><h1><span class="Estilo1">RESERVAS UNIVERSIDAD CENTRAL</span></h1></td>

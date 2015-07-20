@@ -43,7 +43,7 @@
                <div class="panel panel-default">
                   <div class="panel-body">  
                       
-                    <form name="formulario1" class="formularioTipo1" role="form" action="ServletUsuario" onsubmit="return validarForma(this)">
+                      <form method="post"  name="formulario1" class="formularioTipo1" role="form" action="UsuarioServlet" onsubmit="return validarForma(this)">
                          <div class="form-group">
                              <label for="cedula">Numero Cedula</label>
                              <input name="codigo" type="text"  class="form-control" id="cedula" placeholder="Ingrese número de cedula">
@@ -52,31 +52,36 @@
                          <div class="form-group">
                               <label for="nombre">Nombre</label>
                               <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-                         </div>    
+                         </div> 
+                        
+                         <div class="form-group">
+                              <label for="apellido">Apellido</label>
+                              <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
+                         </div>  
                         
                          <div class="form-group">
                              <label for="genero">Genero</label>
-                             <label class="radio-inline"><input type="radio" name="optradio" value="H">Hombre</label>
-                             <label class="radio-inline"><input type="radio" name="optradio" value="M">Mujer</label>
+                             <label class="radio-inline"><input type="radio" name="genero" id="genero" value="H">Hombre</label>
+                             <label class="radio-inline"><input type="radio" name="genero" id="genero" value="M">Mujer</label>
                          </div>                              
 
                 
                          <div class="form-group">
-                             <label for="ocupacion">Ocupacion</label>
-                                <select name="Ocupacion" id="ocupacion" class="default form-control">
+                             <label for="cargo">Cargo</label>
+                                <select name="cargo" id="cargo" class="default form-control">
                                     <option value="">Seleccionar</option>
-                                    <option value="1">Estudiante</option>
-                                    <option value="2">Egresado</option>
-                                    <option value="3">Docente</option>
-                                    <option value="4">Empleado</option>
-                                    <option value="5">Administrativo</option>         
+                                    <option value="estudiante">Estudiante</option>
+                                    <option value="egresado">Egresado</option>
+                                    <option value="docente">Docente</option>
+                                    <option value="empleado">Empleado</option>
+                                    <option value="administrativo">Administrativo</option>         
                                 </select>
                          </div>
            
                         
                          <div class="form-group">
                              <label for="usuario">Usuario:(*)</label>
-                             <input class="default form-control" type="text" name="user" onfocus="this.select();" id="usuario" placeholder="Ingrese su username"/> 
+                             <input class="default form-control" type="text" name="username" onfocus="this.select();" id="usuario" placeholder="Ingrese su username"/> 
                          </div>
                         
                          
@@ -84,11 +89,20 @@
                             <label for="pass" class="oce-first"> Password:(*)</label>
                             <input class="form-control default" type="password" name="password" onfocus="this.select();" id="pass" placeholder="Ingrese su contraseña"/>
                           </div>  
+                        
+                          <div class="form-group">
+                             <label for="rol">Rol</label>
+                                <select name="rol" id="rol" class="default form-control">
+                                    <option value="">Seleccionar</option>
+                                    <option value="editor">Editor</option>  
+                                    <option value="administrador">Administrador</option>  
+                                </select> 
+                          </div>
                
        
                           <button type="reset" class="btn btn-default default btn-lg">Limpiar</button>
                           <button type="submit" class="btn btn-success defaul btn-lg">Enviar</button>
-                          <button type="button" class="btn btn-info btn-lg right-block"><a href="index.jsp">Regresar</a></button> 
+                          <a href="index.jsp" class="btn btn-info btn-lg" role="button">Regresar</a>
                     </form>     
 
                   </div>

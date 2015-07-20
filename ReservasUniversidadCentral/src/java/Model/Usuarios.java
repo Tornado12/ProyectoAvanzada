@@ -6,10 +6,7 @@
 package Model;
 
 import java.util.ArrayList;
-/**
- *
- * @author ryu
- */
+
 public class Usuarios {
     
     ArrayList listaUsuarios = new ArrayList();
