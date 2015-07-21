@@ -40,32 +40,9 @@
               <div class="bloque_principal">    
                  
                 <div class="panel panel-default">
-                    <div class="panel-body">      
-                    <%  
-                       String mensaje = (String)session.getAttribute("usuario"); 
-                       String name = (String)session.getAttribute("name");
-                      
-                        if(mensaje!=null){
-                            
-                    %>        
-                      <div class="alert alert-info">   
-                       <%=mensaje+ name+""%> 
-                      
-                       <a href="logout" class="text-right"> Cerrar Sesión </a>
+                    <div class="panel-body">    
                        
-                      </div>
-                       
-                    <%       
-                        } 
-                    %>      
-                    
-                      <div class="alert alert-info">   
-                       <%=mensaje+ name+""%> 
-                      </div>
-                       
-                    <%       
-                        } 
-                    %>    
+                 
                         
                         
                         
