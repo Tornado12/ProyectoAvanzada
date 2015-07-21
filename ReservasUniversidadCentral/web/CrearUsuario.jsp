@@ -43,6 +43,27 @@
                <div class="panel panel-default">
                   <div class="panel-body">  
                       
+                    <%  
+                       String mensaje = (String)session.getAttribute("usuario"); 
+                       String name = (String)session.getAttribute("name");
+                      
+                        if(mensaje!=null){
+                            
+                    %>        
+                      <div class="alert alert-info">   
+                       <%=mensaje+ name+""%> 
+                      
+                       <a href="logout" class="text-right"> Cerrar Sesión </a>
+                       
+                      </div>
+                       
+                    <%       
+                        } 
+                    %>      
+                      
+                      
+                      
+              
                       <form method="post"  name="formulario1" class="formularioTipo1" role="form" action="UsuarioServlet" onsubmit="return validarForma(this)">
                          <div class="form-group">
                              <label for="cedula">Numero Cedula</label>
@@ -99,9 +120,14 @@
                                 </select> 
                           </div>
                
-       
+                         <div class="form-group">
+                              <button type="submit" class="btn btn-success defaul btn-lg">Enviar</button>
+                         </div>    
+                          
+                          <br><br><br>
+                          
                           <button type="reset" class="btn btn-default default btn-lg">Limpiar</button>
-                          <button type="submit" class="btn btn-success defaul btn-lg">Enviar</button>
+                         
                           <a href="index.jsp" class="btn btn-info btn-lg" role="button">Regresar</a>
                     </form>     
 

@@ -116,7 +116,7 @@ public class Usuario {
     
     
     
-    
+    /**
     public boolean GuardarUsuario (Usuario user) {
         try{
           int pos;
@@ -147,6 +147,8 @@ public class Usuario {
          
  
     }
+    
+    **/
 
     /*
     public int getUsuario_privilegio() {

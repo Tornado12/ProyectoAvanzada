@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
       <link rel="stylesheet" type="text/css" href="css/estilo-general.css">
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  
+      <title>Sistema de reservas UCENTRAL</title>
       <script src="js/jquery.min.js" type="text/javascript"></script>
       <script src="js/bootstrap.min.js" type="text/javascript"></script>
       
@@ -45,8 +45,31 @@
                  
                 <div class="panel panel-default">
                     <div class="panel-body">
-                      <h2>Seleccione una de las opciones:</h2>         
+                      <h2>Seleccione una de las opciones:</h2>   
+                      
+                    <%  
+                       String mensaje = (String)session.getAttribute("usuario"); 
+                       String name = (String)session.getAttribute("name");
+                      
+                        if(mensaje!=null){
+                            
+                    %>        
+                      <div class="alert alert-info">   
+                       <%=mensaje+ name+""%> 
                      
+                       <a href="logout" class="text-right"> Cerrar Sesión </a>
+                       
+                      </div>
+                       
+                    <%       
+                        } 
+                    %>        
+                         
+                     
+                                              
+                      
+                    
+                    
                       <table class="table">
                         <thead>
                           <tr>

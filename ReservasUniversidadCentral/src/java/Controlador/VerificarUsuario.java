@@ -11,19 +11,19 @@
 package Controlador;
 
 import Model.Usuario;
+import Servicios.UsuarioDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author hwongu
- */
+
+@WebServlet(name = "VerificarUsuario", urlPatterns = {"/VerificarUsuario"})
 public class VerificarUsuario extends HttpServlet {
-   
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -33,6 +33,39 @@ public class VerificarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+         Usuario est = new Usuario();
+         UsuarioDAO  user = new UsuarioDAO();
+         boolean ingreso;
+   
+       try (PrintWriter out = response.getWriter()) { 
+         String usuario = request.getParameter("usuario");
+       //  String clave = request.getParameter("clave");
+       
+       
+        ingreso = user.Validar(request.getParameter("usuario"),request.getParameter("clave"));
+         
+        HttpSession session = request.getSession(false); 
+      
+        
+        if(ingreso == true){
+              //El usuario existe en la base de datos y clave correcta
+              //Creamos la sesion
+              
+            
+             // sesion.setAttribute("usuario", "Bienvendo 
+              session.setAttribute("name", usuario); 
+             
+              request.getSession().setAttribute("usuario", "Bienvenido: "); 
+              response.sendRedirect("index.jsp");
+        }else{
+            
+            request.getSession().setAttribute("result", "El usuario o contraseña incorrectos!!!");    
+            response.sendRedirect("Mensaje.jsp");
+            
+        }
+      
+        
+      }
         
      /**   
        String user=request.getParameter("txtUsuario");

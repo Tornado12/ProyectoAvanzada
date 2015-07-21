@@ -2,6 +2,7 @@
 package Controlador;
 
 import Model.Usuario;
+import Servicios.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,7 +30,7 @@ public class UsuarioServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         Usuario est = new Usuario();
-        Usuario a =new Usuario();
+        UsuarioDAO crear = new UsuarioDAO();
         boolean test;
                     
         try (PrintWriter out = response.getWriter()) {
@@ -48,16 +49,21 @@ public class UsuarioServlet extends HttpServlet {
             
             
              
-               test = est.GuardarUsuario(est);
-                
-               System.out.println("asasssss "+request.getParameter("codigo"));
+               //test = est.GuardarUsuario(est);
+               test = crear.GuardarUsuario(est);
                
                 if (test==true) {
+                   // request.getSession().setAttribute("valor", test);
+                    request.getSession().setAttribute("result", "Usuario registrado exitosamente");
                     response.sendRedirect("Mensaje.jsp");
-                    //request.getRequestDispatcher("Mensaje.jsp").forward(request, response); 
+                   // request.getRequestDispatcher("Mensaje.jsp").forward(request, response); 
                 } else {
-                    out.println("Error al registrar usuario");
-                    out.println("VALOR REGRESO "+test);
+                   // request.getSession().setAttribute("valor", test);
+                    request.getSession().setAttribute("result", "Error al registrar usuario");
+                   // request.getRequestDispatcher("Mensaje.jsp").forward(request, response); 
+                    response.sendRedirect("Mensaje.jsp");
+                    //out.println("Error al registrar usuario");
+                    //out.println("VALOR REGRESO "+test);
                 }
                 
                
