@@ -8,77 +8,139 @@
 <!DOCTYPE html>
 <html>
     <head>
-          <script type="text/javascript" src="Validaciones.js"></script>
-    <style type="text/css">
-<!--
-body {
-	background-color: #FFFF99;
-}
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-}
-</style>
-     </head>
-     <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr align="center" bgcolor="#66CC00">
-        <td colspan="2"><h1><span class="Estilo1">RESERVAS UNIVERSIDAD CENTRAL</span></h1></td>
-        </tr>
-        <td colspan="2"><div align="center"><h3><span class="Estilo2">Formulario de Inscripcion</span></h3></div></td>
-        </tr>
+       
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="css/estilo-general.css">
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <title>Sistema de reservas UCENTRAL</title>
+      <script src="js/jquery.min.js" type="text/javascript"></script>
+      <script src="js/bootstrap.min.js" type="text/javascript"></script>
+         
+    </head>
+   
     <body>
-        <br><br>
-        <form name="formulario2" class="formularioTipo1" action="ServletReserva" onsubmit="return validarForma(this)">
-        <table>
-            <tr>
-                <td>Tipo Reserva</td>
-                <td>
-                    <select name="Treserva" class="default">
-                        <option value="">Seleccionar</option>
-                        <option value="1">Academica</option>
-                        <option value="2">Administrativa</option>
-                        <option value="3">Capacitacion</option>
-                        <option value="4">Otros</option>
-                    </select>
-                </td>        
-            <tr>
-                <td>Fecha</td>
-                <td><input name="fecha" type="text"></td>
-            </tr>
-            <tr>
-                <td>Hora Inicio</td>
-                <td><input name="Hinicio" type="text"></td>
-            </tr>
-            <tr>
-                <td>Hora Final</td>
-                <td><input name="Hfinal" type="text"></td>
-            </tr>
-            <tr>
-                <td>Tipo Espacio</td>
-                <td>
-                    <select name="Espacio" class="default">
-                        <option value="">Seleccionar</option>
-                        <option value="1">Salon</option>
-                        <option value="2">Auditorio</option>
-                        <option value="3">Laboratorio</option>
-                        <option value="4">Teatro</option>
-                    </select>
-                </td>
-            </tr>
+   
+         <div class="container">
+           
+             <header>
+                <div class="panel panel-default">
+                <div class="panel-body">
+                 <div class="row">
+                 <div class="col-lg-6 logo">
+                     <img src="img/logo_ucentral.png" class="img-responsive center-block"/>             
+                 </div>
+              
+                 <div class="col-lg-6">
+                     <h1 class="text-center">RESERVAS UNIVERSIDAD CENTRAL</h1>
+       
+                    <p class="text-center lead">Bienvenidos al sistema de reservas de zonas comunes de la Universidad Central</p>
+                 
+                 </div>
+                 </div>
+                </div></div>
+             </header>  
             
-            <tr style ="text-align: center;">
-                <td>
-                    <input  type="reset" value="Limpiar" class="default"/>
-                </td>
-                <td>
-                    <input type="submit" value="Enviar" class="defaul">
-                </td>
-            </tr>
-        </table>   
-    </form>     
-        <h4><div aling="center"><a href="index.jsp">Volver al inicio</a></h4></div></td>
-  </tr>  
-   <tr>
-    <td colspan="2" bgcolor="#66CC00"><div align="center"><strong><span class="Estilo2">2015</span></strong></div></td>
-  </tr>
+             
+             
+             
+             <div class="bloque_principal">    
+                 
+                <div class="panel panel-default">
+                    <div class="panel-body">
+        
+
+                        <%  
+                           String mensaje = (String)session.getAttribute("usuario"); 
+                           String name = (String)session.getAttribute("name");
+
+                            if(mensaje!=null){
+
+                        %>        
+                          <div class="alert alert-info">   
+                           <%=mensaje+ name+""%> 
+
+
+                           <a href="logout" class="text-right"> Cerrar Sesión </a>
+
+                          </div>
+
+                        <%       
+                            } 
+                        %>       
+                        
+                        
+                        
+        
+        
+                        <form method="post" name="formulario1" class="formularioTipo1" role="form" action="ServletReserva" onsubmit="return validarForma(this)">
+                        
+                                
+                                   <div class="form-group">
+                                    <label for="fecha">Fecha</label>
+                                    <input name="fecha" type="text" id="fecha" class="form-control" />
+                                   </div>  
+                          
+                                   <div class="form-group">
+                                   <label for="hora">Hora Inicio</label>
+                                   <input name="hora_ini" id="hora" type="text" class="form-control">
+                                   </div>
+                            
+                                   <div class="form-group">
+                                   <label>Hora Final</label>
+                                   <input name="hora_fin" id="hora_fin" type="text" class="form-control">
+                                   </div>
+                           
+                          
+                                   <div class="form-group">
+                                    <label>Tipo Espacio</label>
+                               
+                                    <select name="espacio" id="espacio" class="default form-control">
+                                        <option value="">Seleccionar</option>
+                                        <option value="salon">Salon</option>
+                                        <option value="auditoria">Auditorio</option>
+                                        <option value="laboratorio">Laboratorio</option>
+                                        <option value="teatro">Teatro</option>
+                                    </select>
+                                   </div> 
+                               
+                                     
+                                   <div class="form-group">
+                                        <button type="submit" class="btn btn-success defaul btn-lg">Enviar</button>
+                                   </div> 
+                                   
+
+                           
+                                    <button type="reset" class="btn btn-default default btn-lg">Limpiar</button>
+                                    
+                                    
+                         
+                                    <a href="index.jsp" class="btn btn-info btn-lg" role="button">Regresar</a>
+                                   
+                        </form>     
+      
+                        
+                    </div>
+                 </div>
+              
+             </div>
+     
+         </div>
+        
+
+          <footer class="row-fluid text-right">
+              <span class="col-lg-12 lead"><strong>Sistema desarrollodo por: </strong></span>
+                 <p class="col-lg-12 small"> Nestor Castro - Javier Becerra </p>
+                 <ul class="list-inline col-lg-12">
+                     <li>Programación Avanzada</li>
+                     <li>Universidad Central 2015</li>
+                 </ul>
+                <br>
+                <div class="clearfix"></div>
+          </footer>
+                  
     </body>
 </html>

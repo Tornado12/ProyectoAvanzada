@@ -9,8 +9,8 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    private String user = "root";
-    private String password = "";
+    private String user = "tornado12";
+    private String password = "ucentral15";
     private String url = "jdbc:mysql://localhost:3306/tornado_bd";
     
 

@@ -56,7 +56,7 @@ public class VerificarUsuario extends HttpServlet {
               session.setAttribute("name", usuario); 
              
               request.getSession().setAttribute("usuario", "Bienvenido: "); 
-              response.sendRedirect("index.jsp");
+              response.sendRedirect("CrearReserva.jsp");
         }else{
             
             request.getSession().setAttribute("result", "El usuario o contraseña incorrectos!!!");    
