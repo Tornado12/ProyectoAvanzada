@@ -1,3 +1,8 @@
+<%-- 
+    Document   : CrearAuditorio
+    Created on : 22/07/2015, 03:48:43 AM
+    Author     : Javier
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,12 +19,12 @@
       <script src="js/jquery.min.js" type="text/javascript"></script>
       <script src="js/bootstrap.min.js" type="text/javascript"></script>
       <script type="text/javascript" src="js/Validaciones.js"></script>
-
     </head>
+    
     
     <body>
         
-        
+       
          <div class="container">
            
              <header>
@@ -64,36 +69,69 @@
                     %>     
                       
                     
-                    <h4> Seleccione el tipo de espacio que desea crear </h4>
-                      
                     
-                        <form method="post" name="formulario1" class="formularioTipo1" role="form" action="ServletEspacio" onsubmit="return validarForma(this)">
-                        
-                                
-                                   <div class="form-group">
-                                       <label for="espacio">Seleccione el espacio a crear</label>
-                                        <select name="espacio" id="espacio" class="default form-control">
-                                            <option value="">Seleccionar</option>
-                                            <option value="salom">Salon</option>
-                                            <option value="teatro">Teatro</option>
-                                            <option value="auditorio">Auditorio</option>
-                                            <option value="laboratorio">Laboratorio</option>
-                                        </select>
-                                   </div>
-                            
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success defaul btn-lg">Enviar</button>
-                                   </div> 
+                    <%
+                        String msg = (String)session.getAttribute("result");   
+                    %>
+                    
+                     <h3><%=" Creación de:  "+ msg+""%> </h3>
+                     
+                     
+                     
+                     
+                      <form method="post"  name="formulario1" class="formularioTipo1" role="form" action="ServletProcesarFactory" onsubmit="return validarForma(this)">
+                         <div class="form-group">
+                             <label for="nombre">Nombre</label>
+                             <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese nombre del salón">
+                         </div>  
                          
-                                    <a href="index.jsp" class="btn btn-info btn-lg" role="button">Regresar</a>
-                            
-                            
-                        </form>
+    
+                         
+                         <div class="form-group">
+                             <label for="video">Video Bean</label>
+                             <select name="video" id="video" class="default form-control">
+                                    <option value="">Seleccionar</option>
+                                    <option value="si">SI</option>
+                                    <option value="no">No</option>
+    
+                             </select>
+                         </div>
+                         
+                         <div class="form-group">
+                             <label for="comp">Número de computadores</label>
+                             <input name="comp" type="text" class="form-control" id="comp" placeholder="Ingrese el numero de computadores">
+                         </div>
+                         
+                         
+                         <div class="form-group">
+                             <label for="capacidad">Capacidad alumnos</label>
+                             <input name="capacidad" type="text" class="form-control" id="capacidad" placeholder="Ingrese la capacidad del sitio">
+                         </div>
+                         
+                          <input type="hidden" name="lugar" id="lugar" value="<%=msg%>">
+                         
+                         
+                         <div class="form-group">
+                              <button type="submit" class="btn btn-success defaul btn-lg">Enviar</button>
+                         </div>    
+                          
+                          <br><br><br>
+                          
+                          <button type="reset" class="btn btn-default default btn-lg">Limpiar</button>
+                         
+                          <a href="index.jsp" class="btn btn-info btn-lg" role="button">Regresar</a>
+                         
+                         
+                     </form>
+                     
+                     
+                     
+                     
+                     
                     
                    </div>
                </div>    
              </div>
-             
              
              
          </div>    
@@ -110,6 +148,9 @@
                 <br>
                 <div class="clearfix"></div>
           </footer>
+        
+        
+            
         
     </body>
 </html>

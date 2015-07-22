@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 /**
@@ -10,36 +5,60 @@ package Model;
  * @author Javier
  */
 public class Auditorio implements ITipoEspacio{
-    
-    private int idAuditorio;
+
+        
     private String nombre;
+    private String videoBeam;
+    private String computadores;
     private String capacidad;
     
     
     
-
-    @Override
-    public String getCaracteristicas() {
-        
-        return "";
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    @Override
+    public void setVideoBeam(String videoBeam) {
+        this.videoBeam = videoBeam;
+    }
+
+    public void setComputadores(String computadores) {
+        this.computadores = computadores;
+    }
+
+    public void setCapacidad(String capacidad) {
+        this.capacidad = capacidad;
+    }
+
+
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getVideoBeam() {
+        return videoBeam;
+    }
+
+    public String getComputadores() {
+        return computadores;
+    }
+
     public String getCapacidad() {
-       
-        return "";
+        return capacidad;
     }
 
     @Override
-    public boolean getDisponibilidad() {
-         
-        return true;
-    }
-
-    @Override
-    public void clonar() {
-      
-        
+    public String crearLugar() {
+        return "AUDITORIO";
     }
     
+
+    
+    
+ 
+    
+
+ 
+  
 }

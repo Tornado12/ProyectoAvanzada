@@ -1,9 +1,3 @@
-<%-- 
-    Document   : CrearReserva
-    Created on : 12-jul-2015, 20:44:57
-    Author     : ryu
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

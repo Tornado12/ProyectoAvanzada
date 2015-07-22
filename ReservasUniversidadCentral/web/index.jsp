@@ -75,14 +75,14 @@
                           <tr>
                             <th><h3 class="center-block"><a href="CrearUsuario.jsp">Registro de Usuarios</a></h3></th>
                             <th><h3 class="center-block"><a href="login.jsp">Ingreso de Usuarios</a></h3></th>
-                             <%  if(mensaje!=null){ %> <th><h3 class="center-block"><a href="CrearEspacio.jsp">Crear espacio</a></h3></th> <% } %>
+                             <% if(mensaje!=null){ %> <th><h3 class="center-block"><a href="CrearEspacio.jsp">Crear espacio</a></h3></th> <% } %>
                           </tr>
                         </thead>
                            <tbody>
                             <tr>
                                 <td><a href="CrearUsuario.jsp"><img src="img/registro.png" alt="registro" class="center-block"/></a></td>
                                 <td><a href="login.jsp"><img src="img/login.png" alt="login" class="center-block"/></a></td>
-                                <%  if(mensaje!=null){ %> <td><a href="CrearEspacio.jsp"><img src="img/espacio.png" alt="login" class="center-block"/></a></td>  <% } %>
+                                <%  if(mensaje!=null){ %> <td><a href="CrearEspacio.jsp"><img src="img/espacio.png" alt="login" class="center-block"/></a></td> <% } %>
                             </tr>
                           </tbody>
                        </table>

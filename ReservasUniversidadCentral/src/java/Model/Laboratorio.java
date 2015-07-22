@@ -11,34 +11,66 @@ package Model;
  */
 public class Laboratorio implements ITipoEspacio{
     
-    private int idLab;
+    
+    private String nombre;
+    private String torre;
+    private String videoBeam;
+    private String computadores;
     private String capacidad;
-    private String materia;
+    
     
 
-    @Override
-    public String getCaracteristicas() {
-       
-        return "";
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    @Override
+    public void setTorre(String torre) {
+        this.torre = torre;
+    }
+
+    public void setVideoBeam(String videoBeam) {
+        this.videoBeam = videoBeam;
+    }
+
+    public void setComputadores(String computadores) {
+        this.computadores = computadores;
+    }
+
+    public void setCapacidad(String capacidad) {
+        this.capacidad = capacidad;
+    }
+    
+    
+  
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getTorre() {
+        return torre;
+    }
+
+    public String getVideoBeam() {
+        return videoBeam;
+    }
+
+    public String getComputadores() {
+        return computadores;
+    }
+
     public String getCapacidad() {
-        
-        return "";
-        
+        return capacidad;
     }
 
     @Override
-    public boolean getDisponibilidad() {
-        
-        return true;
+    public String crearLugar() {
+       return "LABORATORIO";
     }
-
-    @Override
-    public void clonar() {
-        
-      
-    }
+    
+    
+  
+    
     
 }
